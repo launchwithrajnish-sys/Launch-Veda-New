@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+/* Ensure clean, elegant global typography defaults with maximum soft weight rules */
+* {
+  font-family: var(--font-sans) !important;
+}
+
+code,
+pre,
+.font-mono,
+[class*="font-mono"] {
+  font-family: var(--font-mono), monospace !important;
+}
+
+html,
+body {
+  font-family: var(--font-sans) !important;
+  background-color: #ffffff;
+  /* Use white to flawlessly merge with Section 2 */
+  color: #121e50;
+  margin: 0;
+  overflow-x: clip;
+  width: 100%;
+  font-weight: 400 !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sans) !important;
+  font-weight: 600 !important;
+  /* Cap headings at 600 max */
+  letter-spacing: -0.02em !important;
+}
+
+/* Force override all excessive font-weights across the entire app */
+.font-bold,
+.font-extrabold,
+.font-black,
+[class*="font-[7"],
+[class*="font-[8"],
+[class*="font-[9"] {
+  font-weight: 600 !important;
+}
+
+/* Ensure secondary body elements, labels, fields, and form options default to lighter, clean regular weight */
+p,
+label,
+textarea,
+input,
+select,
+option,
+blockquote {
+  font-weight: 400 !important;
+}
+
+/* Force secondary texts, lists, and metadata descriptions to support readable regular structure */
+.desc,
+.subheading,
+p.subheading,
+.text-slate-500,
+.text-slate-400 {
+  font-weight: 400 !important;
+}
+
+/* Let navbar links, menu options, badges, and chips be clean and medium (500) keynotes */
+.badge,
+.chip,
+[class*="badge-"],
+[class*="chip-"],
+.tag,
+li a,
+nav a {
+  font-weight: 500 !important;
+}
+
+/* Ensure buttons use clean 500 or 600 weights, never overly robust weights */
+button,
+.btn,
+[class*="btn-"] {
+  font-weight: 500 !important;
+}
+
+/* Filter out high weight inline styles defined anywhere */
+[style*="font-weight: 7"],
+[style*="font-weight: 8"],
+[style*="font-weight: 9"],
+[style*="font-weight:700"],
+[style*="font-weight:800"],
+[style*="font-weight:900"] {
+  font-weight: 600 !important;
+}
+
+#hero-canvas {
+  background-color: #061033;
+  /* Fallback loading background specifically for hero */
+  background-size: cover !important;
+  background-position: 68% center !important;
+  /* Mobile view: focus on right corner */
+  background-repeat: no-repeat !important;
+}
+
+@media (max-width: 639px) {
+  #hero-canvas {
+    background-image: none !important;
+    min-height: 844px !important;
+  }
+
+  #main-content-flow {
+    min-height: 844px !important;
+    padding-top: 118px !important;
+    padding-bottom: 82px !important;
+    justify-content: flex-start !important;
+  }
+
+  #above-fold-hero {
+    min-height: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  #hero-heading {
+    margin-top: 18px !important;
+  }
+
+  #hero-subheading {
+    margin-top: auto !important;
+    max-width: 23rem !important;
+    font-size: 1.12rem !important;
+    line-height: 1.62 !important;
+  }
+
+  #cta-row {
+    margin-top: 22px !important;
+    gap: 14px !important;
+  }
+
+  #cta-primary-btn,
+  #cta-secondary-btn {
+    width: min(92vw, 360px) !important;
+    height: 58px !important;
+    font-size: 0.98rem !important;
+  }
+
+  #cta-primary-btn svg,
+  #cta-secondary-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  #hero-canvas {
+    background-position: center top !important;
+  }
+}
+
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Default hide the override view on normal screens */
+#main-content-viewport-override {
+  display: none !important;
+}
+
+/* Hero section responsive scale and spacing fixes */
+@media (max-width: 1440px) {
+  #above-fold-hero {
+    margin-top: 1.5rem !important;
+  }
+}
+
+@media (max-width: 1280px) {
+  #above-fold-hero {
+    margin-top: 1rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  #above-fold-hero {
+    margin-top: 0.5rem !important;
+  }
+}
+
+@media (max-width: 639px) {
+  body #hero-canvas,
+  body #main-content-flow {
+    min-height: 844px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  body #above-fold-hero {
+    justify-content: space-between !important;
+  }
+}
