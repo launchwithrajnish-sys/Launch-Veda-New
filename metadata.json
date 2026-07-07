@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: Remix: LaunchVeda 3.0",
+  "description": "Premium, clean, Apple-inspired futuristic product launch hero section for LaunchVeda.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
